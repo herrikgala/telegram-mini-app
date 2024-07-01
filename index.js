@@ -1,4 +1,6 @@
 let tg = window.Telegram.WebApp;
+
+tg.expand();
 tg.MainButton.hide()
 tg.MainButton.enable()
 tg.MainButton.setText('Отправить')
@@ -47,6 +49,11 @@ function handleSelect(e) {
         $textarea.removeAttribute('disabled');
     }
 }
+
+Telegram.WebApp.onEvent('mainButtonClicked', function(){
+	tg.sendData("123123::user_id::полный вариант ответа в виде текста или комментарий"); 
+	//при клике на основную кнопку отправляем данные в строковом виде
+});
 
 // for debugging purposes can be removed
 const $debugging = document.querySelector('#$debugging')
