@@ -61,6 +61,8 @@ $debugging1.innerText = JSON.stringify(tg.initData);
 
 const $debugging2 = document.querySelector('#debugging2')
 $debugging2.innerText = JSON.stringify(tg.initDataUnsafe);
-
+let startParam = window.Telegram.WebApp.initDataUnsafe.start_param
+console.log('startParam',startParam);
+console.log(Telegram.WebApp);
 console.log($debugging1);
 console.log($debugging2);
