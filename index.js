@@ -56,5 +56,11 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
 });
 
 // for debugging purposes can be removed
-const $debugging = document.querySelector('#$debugging')
-$debugging.innerText = JSON.stringify(tg.initData, null, 2);
+const $debugging1 = document.querySelector('#debugging1')
+$debugging1.innerText = JSON.stringify(tg.initData);
+
+const $debugging2 = document.querySelector('#debugging2')
+$debugging2.innerText = JSON.stringify(tg.initDataUnsafe);
+
+console.log($debugging1);
+console.log($debugging2);
