@@ -52,25 +52,15 @@ function handleSelect(e) {
     }
 }
 
-Telegram.WebApp.onEvent("mainButtonClicked", ()=>{alert('123')});
-
-document.addEventListener('DOMContentLoaded', function() {
-    let tg = window.Telegram.WebApp;
-
-    // Ensure tg is defined and ready
-    if (tg) {
-        tg.onEvent('mainButtonClicked', function() {
-            let answer;
-            if (REASONS.includes(selectedOption)) {
-                answer = selectedOption;
-            } else {
-                answer = otherReason;
-            }
-            const transmittingString = `${tg.initDataUnsafe.user.id}::${answer}`;
-            console.log('sent back to bot', transmittingString);
-            tg.sendData(transmittingString);
-        });
+Telegram.WebApp.onEvent("mainButtonClicked", ()=>{
+    console.log('started');
+    let answer;
+    if (REASONS.includes(selectedOption)) {
+        answer = selectedOption;
     } else {
-        console.error('Telegram WebApp SDK not ready');
+        answer = otherReason;
     }
+    const transmittingString = `${tg.initDataUnsafe.user.id}::${answer}`;
+    console.log('sent back to bot', transmittingString);
+    tg.sendData(transmittingString);
 });
