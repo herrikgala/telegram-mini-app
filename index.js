@@ -55,11 +55,16 @@ function handleSelect(e) {
 Telegram.WebApp.onEvent("mainButtonClicked", ()=>{
     console.log('started');
     let answer;
+    console.log('answer');
     if (REASONS.includes(selectedOption)) {
+        console.log('if', selectedOption);
+
         answer = selectedOption;
     } else {
+        console.log('else', otherReason);
         answer = otherReason;
     }
+    console.log('here i am', answer);
     const transmittingString = `${tg.initDataUnsafe.user.id}::${answer}`;
     console.log('sent back to bot', transmittingString);
     tg.sendData(transmittingString);
