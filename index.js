@@ -3,16 +3,12 @@ let tg = window.Telegram.WebApp;
 tg.expand();
 tg.MainButton.setText('Отправить')
 
-let notificationId = window.Telegram.WebApp.initDataUnsafe.start_param
-
-console.log('tg', tg);
-console.log('tg.initData ', tg.initData);
-console.log('tg.initDataUnsafe ', tg.initDataUnsafe);
+// let notificationId = window.Telegram.WebApp.initDataUnsafe.start_param
 
 const REASONS = ['device_error', 'incorrect_value_in_khd', 'incorrect_route']
 
-const $incidentNumber = document.getElementById('$incident-number');
-$incidentNumber.innerText = notificationId || ''
+// const $incidentNumber = document.getElementById('$incident-number');
+// $incidentNumber.innerText = notificationId || ''
 
 let selectedOption = null;
 let otherReason = null;
@@ -61,7 +57,7 @@ Telegram.WebApp.onEvent("mainButtonClicked", () => {
         answer = otherReason;
     }
 
-    const transmittingString = `${tg.initDataUnsafe?.user?.id}::${answer}`;
+    const transmittingString = `${answer}`;
     console.log('sent back to bot', transmittingString);
     tg.sendData(transmittingString);
 });
