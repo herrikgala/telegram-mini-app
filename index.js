@@ -54,6 +54,7 @@ function handleSelect(e) {
 
 Telegram.WebApp.onEvent("mainButtonClicked", ()=>{
     console.log('started');
+    const tgInstance = Telegram.WebApp;
     let answer;
     console.log('answer');
     if (REASONS.includes(selectedOption)) {
@@ -64,8 +65,10 @@ Telegram.WebApp.onEvent("mainButtonClicked", ()=>{
         console.log('else', otherReason);
         answer = otherReason;
     }
-    console.log('here i am', answer);
-    const transmittingString = `${tg.initDataUnsafe.user.id}::${answer}`;
+    console.log('tgInst', tgInstance?.initDataUnsafe?.user?.id);
+    console.log('tg', tg?.initDataUnsafe?.user?.id);
+    
+    const transmittingString = `${tgInstance.initDataUnsafe.user.id}::${answer}`;
     console.log('sent back to bot', transmittingString);
-    tg.sendData(transmittingString);
+    tgInstance.sendData(transmittingString);
 });
