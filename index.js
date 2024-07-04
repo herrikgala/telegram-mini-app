@@ -5,7 +5,7 @@ tg.MainButton.setText('Отправить')
 
 // let notificationId = window.Telegram.WebApp.initDataUnsafe.start_param
 
-const REASONS = ['device_error', 'incorrect_value_in_khd', 'incorrect_route']
+const REASONS = ['Ошибка оборудования', 'Неверное отображение в КХД', 'Неверный маршрут']
 
 // const $incidentNumber = document.getElementById('$incident-number');
 // $incidentNumber.innerText = notificationId || ''
