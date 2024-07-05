@@ -54,7 +54,7 @@ Telegram.WebApp.onEvent("mainButtonClicked", () => {
     if (REASONS.includes(selectedOption)) {
         answer = selectedOption;
     } else {
-        answer = `other::${otherReason}`;
+        answer = `другое::${otherReason}`;
     }
 
     console.log('sent back to bot', answer);
