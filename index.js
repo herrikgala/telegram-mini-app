@@ -14,9 +14,9 @@ function handleInput(e) {
     const value = e.target.value;
     comment = value;
 
-    if (comment) {
+    if (REASONS.includes(selectedOption)) {
         tg.MainButton.show();
-    } else if(REASONS.includes(selectedOption)) {
+    } else if(selectedOption && comment) {
         tg.MainButton.show();
     } else {
         tg.MainButton.hide();
